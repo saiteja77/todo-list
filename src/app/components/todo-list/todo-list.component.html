@@ -1,0 +1,13 @@
+<div class="paper">
+    <h3 class="title">{{title}}</h3>
+    <p>{{subtitle}}</p>
+    <input class="add-task" #filter placeholder="Filter your to-dos" (keyup)="filterTodos(filter.value)"/>
+    <ol>
+        <li *ngFor="let taskItem of displayTaskItems">
+            <app-todo-item [todo]="taskItem" (remove)="removeTask($event)" (complete)="completeTask($event)"></app-todo-item>
+        </li>
+    </ol>
+    <p class="label">{{label}}</p>
+    <input class="add-task" #add_task placeholder="Add your to-do" />
+    <button class="add-button" (click)="newTaskAdded(add_task.value)">Add</button>
+</div>

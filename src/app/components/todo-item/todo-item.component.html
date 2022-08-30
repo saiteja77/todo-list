@@ -1,0 +1,11 @@
+<div>
+    <div *ngIf="!todo.completed else elseBlock">
+        <button class="complete-button" (click)="completeTask(todo)">Complete</button> 
+        <span>{{todo.task}}</span>
+        <button class="remove-button" (click)="removeItem(todo)">X</button>
+    </div>
+    <ng-template #elseBlock>
+        <span style="text-decoration: line-through">{{todo.task}}</span>
+        <button class="remove-button" (click)="removeItem(todo)">X</button>
+    </ng-template>
+</div>
